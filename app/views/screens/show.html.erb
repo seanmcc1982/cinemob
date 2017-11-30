@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Screenname:</strong>
+  <%= @screen.screenname %>
+</p>
+
+<p>
+  <strong>Rows:</strong>
+  <%= @screen.rows %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @screen.width %>
+</p>
+
+<p>
+  <strong>Allocation:</strong>
+  <%= @screen.allocation %>
+</p>
+
+<p>
+  <strong>Addedby:</strong>
+  <%= @screen.addedby %>
+</p>
+
+<%= link_to 'Edit', edit_screen_path(@screen) %> |
+<%= link_to 'Back', screens_path %>

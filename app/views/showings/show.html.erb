@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Slot:</strong>
+  <%= @showing.slot %>
+</p>
+
+<p>
+  <strong>Screenname:</strong>
+  <%= @showing.screenname %>
+</p>
+
+<p>
+  <strong>Filmname:</strong>
+  <%= @showing.filmname %>
+</p>
+
+<p>
+  <strong>Addedby:</strong>
+  <%= @showing.addedby %>
+</p>
+
+<%= link_to 'Edit', edit_showing_path(@showing) %> |
+<%= link_to 'Back', showings_path %>

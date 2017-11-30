@@ -1,0 +1,37 @@
+<%= form_with(model: adminsession, local: true) do |form| %>
+  <% if adminsession.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adminsession.errors.count, "error") %> prohibited this adminsession from being saved:</h2>
+
+      <ul>
+      <% adminsession.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username, id: :adminsession_username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :startdatetime %>
+    <%= form.datetime_select :startdatetime, id: :adminsession_startdatetime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enddatetime %>
+    <%= form.datetime_select :enddatetime, id: :adminsession_enddatetime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ip %>
+    <%= form.text_field :ip, id: :adminsession_ip %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

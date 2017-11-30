@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  startdatetime: 2017-11-25 23:15:32
+  enddatetime: 2017-11-25 23:15:32
+  ip: MyString
+
+two:
+  username: MyString
+  startdatetime: 2017-11-25 23:15:32
+  enddatetime: 2017-11-25 23:15:32
+  ip: MyString

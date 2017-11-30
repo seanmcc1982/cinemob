@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Films</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Cast</th>
+      <th>Plot</th>
+      <th>Poster</th>
+      <th>Trailer</th>
+      <th>Runtime</th>
+      <th>Addedby</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @films.each do |film| %>
+      <tr>
+        <td><%= film.filename %></td>
+        <td><%= film.cast %></td>
+        <td><%= film.plot %></td>
+        <td><%= film.poster %></td>
+        <td><%= film.trailer %></td>
+        <td><%= film.runtime %></td>
+        <td><%= film.addedby %></td>
+        <td><%= link_to 'Show', film %></td>
+        <td><%= link_to 'Edit', edit_film_path(film) %></td>
+        <td><%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Film', new_film_path %>

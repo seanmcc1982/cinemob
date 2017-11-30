@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @adminsession.username %>
+</p>
+
+<p>
+  <strong>Startdatetime:</strong>
+  <%= @adminsession.startdatetime %>
+</p>
+
+<p>
+  <strong>Enddatetime:</strong>
+  <%= @adminsession.enddatetime %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @adminsession.ip %>
+</p>
+
+<%= link_to 'Edit', edit_adminsession_path(@adminsession) %> |
+<%= link_to 'Back', adminsessions_path %>

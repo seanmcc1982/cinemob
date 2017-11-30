@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Adminsessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Startdatetime</th>
+      <th>Enddatetime</th>
+      <th>Ip</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adminsessions.each do |adminsession| %>
+      <tr>
+        <td><%= adminsession.username %></td>
+        <td><%= adminsession.startdatetime %></td>
+        <td><%= adminsession.enddatetime %></td>
+        <td><%= adminsession.ip %></td>
+        <td><%= link_to 'Show', adminsession %></td>
+        <td><%= link_to 'Edit', edit_adminsession_path(adminsession) %></td>
+        <td><%= link_to 'Destroy', adminsession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adminsession', new_adminsession_path %>

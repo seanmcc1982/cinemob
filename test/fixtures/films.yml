@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  filename: MyString
+  cast: MyText
+  plot: MyText
+  poster: 
+  trailer: MyString
+  runtime: 1
+  addedby: MyString
+
+two:
+  filename: MyString
+  cast: MyText
+  plot: MyText
+  poster: 
+  trailer: MyString
+  runtime: 1
+  addedby: MyString

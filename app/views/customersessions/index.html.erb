@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Customersessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customeremail</th>
+      <th>Startdatetime</th>
+      <th>Enddatetime</th>
+      <th>Ip</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customersessions.each do |customersession| %>
+      <tr>
+        <td><%= customersession.customeremail %></td>
+        <td><%= customersession.startdatetime %></td>
+        <td><%= customersession.enddatetime %></td>
+        <td><%= customersession.ip %></td>
+        <td><%= link_to 'Show', customersession %></td>
+        <td><%= link_to 'Edit', edit_customersession_path(customersession) %></td>
+        <td><%= link_to 'Destroy', customersession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customersession', new_customersession_path %>

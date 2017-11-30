@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customeremail:</strong>
+  <%= @customersession.customeremail %>
+</p>
+
+<p>
+  <strong>Startdatetime:</strong>
+  <%= @customersession.startdatetime %>
+</p>
+
+<p>
+  <strong>Enddatetime:</strong>
+  <%= @customersession.enddatetime %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @customersession.ip %>
+</p>
+
+<%= link_to 'Edit', edit_customersession_path(@customersession) %> |
+<%= link_to 'Back', customersessions_path %>

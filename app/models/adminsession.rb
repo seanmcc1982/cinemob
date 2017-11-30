@@ -1,0 +1,2 @@
+class Adminsession < ApplicationRecord
+end

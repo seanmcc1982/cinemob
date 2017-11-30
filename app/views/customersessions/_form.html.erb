@@ -1,0 +1,37 @@
+<%= form_with(model: customersession, local: true) do |form| %>
+  <% if customersession.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customersession.errors.count, "error") %> prohibited this customersession from being saved:</h2>
+
+      <ul>
+      <% customersession.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :customeremail %>
+    <%= form.text_field :customeremail, id: :customersession_customeremail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :startdatetime %>
+    <%= form.datetime_select :startdatetime, id: :customersession_startdatetime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enddatetime %>
+    <%= form.datetime_select :enddatetime, id: :customersession_enddatetime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ip %>
+    <%= form.text_field :ip, id: :customersession_ip %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customeremail:</strong>
+  <%= @booking.customeremail %>
+</p>
+
+<p>
+  <strong>Showingid:</strong>
+  <%= @booking.showingid %>
+</p>
+
+<p>
+  <strong>Seat:</strong>
+  <%= @booking.seat %>
+</p>
+
+<p>
+  <strong>Pricelabel:</strong>
+  <%= @booking.pricelabel %>
+</p>
+
+<p>
+  <strong>Iscancelled:</strong>
+  <%= @booking.iscancelled %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customeremail: 
+  startdatetime: 2017-11-25 23:15:25
+  enddatetime: 2017-11-25 23:15:25
+  ip: MyString
+
+two:
+  customeremail: 
+  startdatetime: 2017-11-25 23:15:25
+  enddatetime: 2017-11-25 23:15:25
+  ip: MyString
