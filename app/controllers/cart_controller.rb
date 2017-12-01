@@ -7,4 +7,7 @@ class CartController < ApplicationController
 
   def clear
   end
+  
+  def index
+  end
 end
