@@ -4,6 +4,7 @@ class CreateShowings < ActiveRecord::Migration[5.1]
       t.datetime :slot
       t.string :screenname
       t.string :filmname
+      t.decimal :price
       t.string :addedby
 
       t.timestamps

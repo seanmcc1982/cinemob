@@ -10,7 +10,6 @@ class ShowingsController < ApplicationController
   # GET /showings/1
   # GET /showings/1.json
   def show
-    @showings = Showing.find(params[:id])
   end
 
   # GET /showings/new
@@ -70,6 +69,6 @@ class ShowingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def showing_params
-      params.require(:showing).permit(:slot, :screenname, :filmname, :addedby)
+      params.require(:showing).permit(:slot, :screenname, :filmname, :price, :addedby)
     end
 end

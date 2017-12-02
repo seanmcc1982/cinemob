@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171125231614) do
+ActiveRecord::Schema.define(version: 20171202194533) do
 
   create_table "administrators", force: :cascade do |t|
     t.string "username", default: "", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20171125231614) do
     t.string "customeremail"
     t.integer "showingid"
     t.string "seat"
-    t.string "pricelabel"
+    t.decimal "totalprice"
     t.boolean "iscancelled"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -86,18 +86,6 @@ ActiveRecord::Schema.define(version: 20171125231614) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "prices", force: :cascade do |t|
-    t.string "pricelabel"
-    t.text "day"
-    t.integer "hourstart"
-    t.integer "hourend"
-    t.boolean "event"
-    t.decimal "value"
-    t.string "addedby"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "screens", force: :cascade do |t|
     t.string "screenname"
     t.integer "rows"
@@ -112,6 +100,7 @@ ActiveRecord::Schema.define(version: 20171125231614) do
     t.datetime "slot"
     t.string "screenname"
     t.string "filmname"
+    t.decimal "price"
     t.string "addedby"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

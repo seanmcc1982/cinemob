@@ -4,7 +4,7 @@ class CreateBookings < ActiveRecord::Migration[5.1]
       t.string :customeremail
       t.integer :showingid
       t.string :seat
-      t.string :pricelabel
+      t.decimal :totalprice
       t.boolean :iscancelled
 
       t.timestamps

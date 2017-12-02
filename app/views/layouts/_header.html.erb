@@ -2,14 +2,23 @@
       <div class="container">
        <h4 id="logo">Cinemob</h4>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Listings", root_path  %></li>
+         <ul class="nav navbar-nav navbar-right">
+            
+            <li><%= link_to "Showtimes", root_path %></li>
             <li><%= link_to "Cart",   cart_path  %></li>
             <li><%= link_to "Subscriptions", subscribe_path  %></li>
             <li><%= link_to "Register", register_path  %></li>
             <li><%= link_to "Log in", login_path %></li>
+            <li><%= link_to "Log out", logout_path %></li>
+            <li><%= link_to "Admin Log in", adminlogin_path %></li>
+            <li><%= link_to "Admin Log out", adminlogout_path %></li>
+            <li><%= link_to "Booking history", bookinghistory_path %></li>
+            <li><%= link_to "Films", films_path %></li>
+            <li><%= link_to "Screens", screens_path %></li>
             
-          </ul>
+          </ul> 
         </nav>
       </div>
     </header>
+
+

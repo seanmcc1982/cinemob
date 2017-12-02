@@ -1,32 +1,34 @@
 <p id="notice"><%= notice %></p>
-<% provide(:title, "Showings") %>
 
 <h1>Showings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Slot</th> 
-      <th>Screenname</th>
-      <th>Filmname</th>
-      <th>Addedby</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<table class="catalog">
     <% @showings.each do |showing| %>
       <tr>
-        <td><%= showing.slot %></td>
-        <td><%= showing.screenname %></td>
-        <td><%= showing.filmname %></td>
-        <td><%= showing.addedby %></td>
-        <td><%= link_to 'Show', showing %></td>
-        <td><%= link_to 'Edit', edit_showing_path(showing) %></td>
-        <td><%= link_to 'Destroy', showing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="title">
+            <%= showing.filmname %>
+          </div>
+          <div class="slots">
+            <%= showing.slot %>
+          </div>
+          <div class="description">
+            <%= showing.screenname %>
+          </div>
+          <div class="price">
+            <%= number_to_currency(showing.price, :unit => "€") %>
+          </div>
+        </td>
+        <td>
+          <div class="links">
+            Added By: <%= showing.addedby %>
+            <%= link_to 'Show', showing %>
+            <%= link_to 'Edit', edit_showing_path(showing) %>
+            <%= link_to 'Destroy', showing, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </td>
       </tr>
     <% end %>
-  </tbody>
 </table>
 
 <br>
