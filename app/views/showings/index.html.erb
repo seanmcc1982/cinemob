@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Showings</h1>
+<h1>Showtimes</h1>
 
 <table class="catalog">
     <% @showings.each do |showing| %>
@@ -21,10 +21,13 @@
         </td>
         <td>
           <div class="links">
-            Added By: <%= showing.addedby %>
-            <%= link_to 'Show', showing %>
-            <%= link_to 'Edit', edit_showing_path(showing) %>
-            <%= link_to 'Destroy', showing, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% if session[:login] == 1 %>
+              Added By: <%= showing.addedby %>
+              <%= link_to 'Edit', edit_showing_path(showing) %>
+              <%= link_to 'Destroy', showing, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% else %>
+              <a href="/cart/<%= showing.id %>">Add to Cart</a><br><br>
+            <% end %>
           </div>
         </td>
       </tr>
