@@ -2,18 +2,32 @@ Rails.application.routes.draw do
   
  # root 'home#listing'
   
-
-  devise_for :administrators
-  devise_for :unregisteredcustomers
-  devise_for :customers
+  #devise_for :admins
+  #devise_for :users
+  #devise_for :administrators
+  
+  #devise_for :customers
+  
+    resources :bookings do 
+   resources :bookingitems 
+  end
+  
+  devise_for :users do
+   resources:orders
+  end
+  
+  get '/checkout' => 'cart#createOrder'
+  
+  devise_for :admins
   
   resources :films
   resources :screens
-  resources :bookings
+
   resources :adminsessions
   resources :showings
   resources :customersessions
-  
+  resources :subscriptions
+    
   get '/showtimes' => 'showings#index'
   get '/showtimes/:id' => 'showings#add'
   get '/showtimes/remove/:id' => 'showings#remove'
@@ -23,8 +37,9 @@ Rails.application.routes.draw do
   get '/cart/:id' => 'cart#add'
   get '/cart/remove/:id' => 'cart#remove'
 
-  get '/subscribe' => 'user#sub'
-  get '/unsubscribe' => 'user#unsub'
+  get '/subscriptions' => 'subscription#index'
+  get '/subscriptions/:id' => 'subscription#add'
+  get '/subscriptions/remove/:id' => 'subscription#unsubscribe'
 
   get '/register' => 'user#register'
   get '/unregister' => 'user#unregister'
@@ -47,8 +62,6 @@ Rails.application.routes.draw do
   get '/films/:id' => 'films#add'
   get '/films/remove/:id' => 'films#remove'
   
- 
-
   get '/users' => 'user#index'
   get '/users/remove/:id' => 'user#remove'
  
@@ -57,6 +70,8 @@ Rails.application.routes.draw do
   get '/adminsessions' => 'adminsessions#index'
   
   root 'showings#index'
+  
+  root :to => 'showings#index'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   

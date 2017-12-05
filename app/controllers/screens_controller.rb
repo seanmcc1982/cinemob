@@ -1,6 +1,7 @@
 class ScreensController < ApplicationController
   before_action :set_screen, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!
+  
   # GET /screens
   # GET /screens.json
   def index
@@ -69,6 +70,6 @@ class ScreensController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def screen_params
-      params.require(:screen).permit(:screenname, :rows, :width, :allocation, :addedby)
+      params.require(:screen).permit(:screenname, :rows, :width, :addedby)
     end
 end

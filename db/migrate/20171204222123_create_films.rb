@@ -1,7 +1,7 @@
 class CreateFilms < ActiveRecord::Migration[5.1]
   def change
     create_table :films do |t|
-      t.string :filename
+      t.string :filmname
       t.text :cast
       t.text :plot
       t.binary :poster
@@ -10,6 +10,10 @@ class CreateFilms < ActiveRecord::Migration[5.1]
       t.string :addedby
 
       t.timestamps
+      
+     
+      
     end
-  end
+    add_index :films, :filmname
+    end
 end

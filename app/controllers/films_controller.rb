@@ -1,6 +1,7 @@
 class FilmsController < ApplicationController
   before_action :set_film, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!
+  
   # GET /films
   # GET /films.json
   def index
@@ -69,6 +70,6 @@ class FilmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def film_params
-      params.require(:film).permit(:filename, :cast, :plot, :poster, :trailer, :runtime, :addedby)
+      params.require(:film).permit(:filmname, :cast, :plot, :poster, :trailer, :runtime, :addedby)
     end
 end

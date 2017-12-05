@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  filename: MyString
+  filmname: MyString
   cast: MyText
   plot: MyText
   poster: 
@@ -10,7 +10,7 @@ one:
   addedby: MyString
 
 two:
-  filename: MyString
+  filmname: MyString
   cast: MyText
   plot: MyText
   poster: 

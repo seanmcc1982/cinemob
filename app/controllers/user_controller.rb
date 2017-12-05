@@ -22,9 +22,10 @@ class UserController < ApplicationController
   def history
   end
 
-  def sub
+  def subscribe
+    
   end
 
-  def unsub
+  def unsubscribe
   end
 end

@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '61330f5ba6270f529af313c338a2f8cbe23859ca87ed84fe6c3d1d96eb49a7476920678a508a5c7c7fa20a2c118e2444aed01c5e697ed000bcf5e2837710c4e1'
+  # config.secret_key = 'e978094edb8d8431a3ce62bee8b95ee67145b9b7d8535b9c459c8a1887504503cd52b20fa6e1396adeb044bf28facc23bd55e1b61c50e4a761ed27108d25f73b'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -108,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'a3f223c42572f1c4297f494bfa377b4c28142a9c726ae8097b927965c7cd1763639dd9f0a528d9fad6693d8367eb52c1f63edb919be761e610643ad014b47a80'
+  # config.pepper = 'b79fe4a1a1eb106f8a5da19c3f6d2a9319dec60b5db6fcfd1fe8ef6396fb4d09256114f8c1a84626db998683bc048854a4e2df14bfbad4f61d5d23f5988ff433'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -274,4 +274,7 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  #SMC allow splitting of user and admin views
+  config.scoped_views = true
 end

@@ -1,3 +1,4 @@
+<% provide(:title, "Showtimes") %>
 <p id="notice"><%= notice %></p>
 
 <h1>Showtimes</h1>
@@ -21,7 +22,7 @@
         </td>
         <td>
           <div class="links">
-            <% if session[:login] == 1 %>
+            <% if admin_signed_in? %>
               Added By: <%= showing.addedby %>
               <%= link_to 'Edit', edit_showing_path(showing) %>
               <%= link_to 'Destroy', showing, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -35,5 +36,6 @@
 </table>
 
 <br>
-
+<% if admin_signed_in? %>
 <%= link_to 'New Showing', new_showing_path %>
+<% end %>

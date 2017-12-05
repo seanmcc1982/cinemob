@@ -5,11 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Customeremail</th>
-      <th>Showingid</th>
-      <th>Seat</th>
-      <th>Totalprice</th>
-      <th>Iscancelled</th>
+      <th>Bookingdate</th>
+      <th>User</th>
+      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +15,9 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.customeremail %></td>
-        <td><%= booking.showingid %></td>
-        <td><%= booking.seat %></td>
-        <td><%= booking.totalprice %></td>
-        <td><%= booking.iscancelled %></td>
+        <td><%= booking.bookingdate %></td>
+        <td><%= booking.user %></td>
+        <td><%= booking.status %></td>
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
         <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>

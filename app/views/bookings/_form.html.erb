@@ -12,28 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :customeremail %>
-    <%= form.text_field :customeremail, id: :booking_customeremail %>
+    <%= form.label :bookingdate %>
+    <%= form.datetime_select :bookingdate, id: :booking_bookingdate %>
   </div>
 
   <div class="field">
-    <%= form.label :showingid %>
-    <%= form.number_field :showingid, id: :booking_showingid %>
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :booking_user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :seat %>
-    <%= form.text_field :seat, id: :booking_seat %>
-  </div>
-
-  <div class="field">
-    <%= form.label :totalprice %>
-    <%= form.text_field :totalprice, id: :booking_totalprice %>
-  </div>
-
-  <div class="field">
-    <%= form.label :iscancelled %>
-    <%= form.check_box :iscancelled, id: :booking_iscancelled %>
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :booking_status %>
   </div>
 
   <div class="actions">

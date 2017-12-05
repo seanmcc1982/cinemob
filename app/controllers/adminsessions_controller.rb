@@ -1,6 +1,7 @@
 class AdminsessionsController < ApplicationController
   before_action :set_adminsession, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!
+  
   # GET /adminsessions
   # GET /adminsessions.json
   def index

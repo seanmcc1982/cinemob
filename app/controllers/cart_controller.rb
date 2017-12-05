@@ -1,5 +1,6 @@
 class CartController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def add
     # get the Id of the product
     id = params[:id]
@@ -44,4 +45,24 @@ class CartController < ApplicationController
 
     redirect_to :action => :index
   end
+  
+  
+ def createOrder
+    # Step 1: Get the current user
+    @user = User.find(current_user.id)
+    
+    # Step 2: Create a new order and associate it with the current user
+    @booking = @user.bookings.build(:bookingdate => DateTime.now, :status => 'Pending')
+    @booking.save
+    
+    # Step 3: For each item in the cart, create a new item on the order!!
+    @cart = session[:cart] || {} # Get the content of the Cart
+    @cart.each do | id |
+    item = Item.find_by_id(id)
+    @bookingitem = @booking.bookingitems.build(:showingid => item.id, :filmname => item.filmname, :seat => 'tofix-SeatNumber', :price=> item.price)
+    @bookingitem.save
+    end
+  end
+
+
 end

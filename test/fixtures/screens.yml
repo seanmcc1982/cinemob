@@ -4,12 +4,10 @@ one:
   screenname: MyString
   rows: 1
   width: 1
-  allocation: MyText
   addedby: MyString
 
 two:
   screenname: MyString
   rows: 1
   width: 1
-  allocation: MyText
   addedby: MyString
